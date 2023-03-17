@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image2String Base64</title>
+</head>
+<body>
+     <input type="file" id="fileinput"> 
+
+    <script>
+         const fileinput=document.getElementById("fileinput")
+
+         fileinput.addEventListener("change", e=>{
+            const file =fileinput.files[0];
+            const reader =new FileReader();
+
+            reader.addEventListener("load",()=>{
+                console.log(reader.result);
+            })
+
+            reader.readAsDataURL(file);
+
+         });
+    </script>
+    
+</body>
+</html>
